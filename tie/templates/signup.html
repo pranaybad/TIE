@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    
+    <style>
+        body {
+            background-image: url(../static/images/background\ rg.png);/* Black background */
+            color: #fff; /* White text */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+
+        .box {
+            border: 2px solid black; /* White border */
+            border-radius: 10px;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 20px;
+            box-shadow: 5px 5px 5px 5px rgb(35, 35, 35);
+        }
+
+        .form-control {
+            background-color: #333; /* Dark grey background for inputs */
+            border: 1px solid #666; /* Darker border for inputs */
+            color: #fff; /* White text inside inputs */
+        }
+
+        .btn-primary {
+            background-color:#6674CC; /* Purple button background */
+            border-color:#6674CC; /* Purple button border */
+        }
+
+        .btn-primary:hover {
+            background-color: #5a32a3; /* Darker purple on hover */
+            border-color: #5a32a3; /* Darker purple border on hover */
+        }
+
+        .form-links a {
+            color:#6674CC; /* Purple links */
+            text-decoration: none;
+        }
+
+        .form-links a:hover {
+            text-decoration: underline;
+        }
+        .exit{
+          font-size: 25px;
+          display: flex;
+          justify-content: end;
+          
+        }
+    </style>
+</head>
+<body>
+
+    <br> <br>
+    <div class="box container-fluid text-center mt-5" style="max-width: 400px;">
+      <a href="/"><i class="exit bi bi-box-arrow-left text-secondary"></i></a>
+      <h4 class="mt-2">Sign up to TIE!</h4> 
+        <form action="/register" method="post" class="mt-2"> 
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="firstname">First Name :</label>
+                <input type="text" class="form-control" id="firstname" placeholder="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name :</label>
+                <input type="text" class="form-control" id="lastname" placeholder="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">* What's your e-mail? :</label>
+                <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password :</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password :</label>
+                <input type="password" class="form-control" id="confirmpassword" placeholder="confirmpassword" name="confirmpassword" required>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+            <div class="l form-links mt-3" style="font-size: 15px;">
+                <a href="/login" style="margin:10px;">Sign in with your account</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
