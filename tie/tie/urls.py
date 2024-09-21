@@ -22,4 +22,5 @@ urlpatterns = [
     path('jobopenings', include('jobopenings.urls')),
     path('learningapp', include('learningapp.urls')),
     path('freelanceapp', include('freelanceapp.urls')),
+    path('', include('baseapp.urls')),
 ]
